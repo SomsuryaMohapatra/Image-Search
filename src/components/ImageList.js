@@ -1,7 +1,18 @@
-import React from 'react'
+import React from "react";
+import "../components_css/ImageList.css"
+import ImgageShow from "./ImageShow";
 
-export default function ImageList() {
+export default function ImageList(props) {
+  const { images } = props;
   return (
-    <div>ImageList</div>
-  )
+    <div className="image-list">
+      {
+        images.map((image)=>{
+          return(
+            <ImgageShow key={image.id} image={image}/>
+          );
+        })
+      }
+    </div>
+  );
 }
